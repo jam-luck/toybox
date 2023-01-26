@@ -1,5 +1,6 @@
 package com.toybox.demo.entity;
 
+import com.toybox.demo.dto.MemberDTO;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,8 +23,8 @@ public class Member {
     @Column(nullable = false)
     private int age;
     @Builder
-    public Member(String name, int age){
-        this.name = name;
-        this.age = age;
+    public Member(MemberDTO dto){
+        this.name = dto.getName();
+        this.age = dto.getAge();
     }
 }

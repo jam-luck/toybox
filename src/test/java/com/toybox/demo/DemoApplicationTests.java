@@ -1,5 +1,6 @@
 package com.toybox.demo;
 
+import com.toybox.demo.dto.MemberDTO;
 import com.toybox.demo.entity.Member;
 import com.toybox.demo.service.MemberService;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,11 +19,11 @@ class DemoApplicationTests {
 	private MemberService memberService;
 	@BeforeEach
 	void init(){
-		memberService.save(Member.builder().name("테스터1").age(22).build());
-		memberService.save(Member.builder().name("테스터2").age(42).build());
-		memberService.save(Member.builder().name("테스터3").age(17).build());
-		memberService.save(Member.builder().name("테스터4").age(59).build());
-		memberService.save(Member.builder().name("테스터5").age(74).build());
+		memberService.save(Member.builder().dto(new MemberDTO("테스터1",22)).build());
+		memberService.save(Member.builder().dto(new MemberDTO("테스터2",42)).build());
+		memberService.save(Member.builder().dto(new MemberDTO("테스터3",56)).build());
+		memberService.save(Member.builder().dto(new MemberDTO("테스터4",77)).build());
+		memberService.save(Member.builder().dto(new MemberDTO("테스터5",15)).build());
 	}
 	@Test
 	void getMember(){

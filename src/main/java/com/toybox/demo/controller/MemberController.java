@@ -1,5 +1,6 @@
 package com.toybox.demo.controller;
 
+import com.toybox.demo.dto.MemberDTO;
 import com.toybox.demo.entity.Member;
 import com.toybox.demo.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -33,10 +34,7 @@ public class MemberController {
 //    }
 
     @PostMapping("/h2/insert")
-    public void addMember(@RequestBody Member member){
-        memberService.save(Member.builder()
-                .name(member.getName())
-                .age(member.getAge())
-                .build());
+    public void addMember(@RequestBody MemberDTO member){
+        memberService.save(Member.builder().dto(member).build());
     }
 }
