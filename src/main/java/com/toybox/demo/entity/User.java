@@ -1,6 +1,5 @@
 package com.toybox.demo.entity;
 
-import com.toybox.demo.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,6 +8,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name="users")
 public class User {
 
     @Id
